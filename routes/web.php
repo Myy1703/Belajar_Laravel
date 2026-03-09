@@ -64,6 +64,7 @@ Route::get('/', [LoginController::class, 'index']);
 Route::post('action-login', [LoginController::class, 'actionLogin'])->name('action-login');
 Route::get('dashboard', [DashboardController::class, 'index']);
 
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 // CREATE READ UPDATE DELETE (CRUD)
 // post = untuk mengirim data (CREATE)
 // get = untuk melihat atau menampilkan data (READ)

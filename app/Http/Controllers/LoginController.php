@@ -27,4 +27,12 @@ class LoginController extends Controller
             // 'email' => 'invalid Credential'
         ]);
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->to('/');
+    }
 }
