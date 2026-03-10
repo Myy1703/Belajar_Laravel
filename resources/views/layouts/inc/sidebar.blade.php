@@ -185,16 +185,16 @@
             <li class="nav-heading">Pages</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed" href="{{ route('user.index') }}">
                     <i class="bi bi-person"></i>
-                    <span>Profile</span>
+                    <span>User</span>
                 </a>
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-faq.html">
-                    <i class="bi bi-question-circle"></i>
-                    <span>F.A.Q</span>
+                <a class="nav-link collapsed" href="{{ route('role.index') }}">
+                    <i class="bi bi-person-workspace"></i>
+                    <span>Role</span>
                 </a>
             </li><!-- End F.A.Q Page Nav -->
 

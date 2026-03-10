@@ -41,7 +41,7 @@
 </head>
 
 <body>
-
+    @include('sweetalert::alert')
     <!-- ======= Header ======= -->
     @include('layouts.inc.header')
     <!-- ======= Sidebar ======= -->
@@ -85,7 +85,28 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).on('click', '.delete-btn', function(e) {
+            e.preventDefault(); //matiin action default
+            var form = $(this).closest('form');
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>

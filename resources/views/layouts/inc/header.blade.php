@@ -213,13 +213,15 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="#" onclick="event.preventDefault() document.getElementById('logout-form').submit()">
+                            <a class="dropdown-item d-flex align-items-center" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Sign Out</span>
                             </a>
                         </li>
 
-                        <form action="{{ route('logout') }}" method="post" id="logout-form" class="d-none"></form>
+                        <form action="{{ route('logout') }}" method="post" id="logout-form" class="d-none">
+                            @csrf
+                        </form>
 
                     </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->

@@ -6,6 +6,12 @@ use App\Http\Controllers\PerhitunganController;
 use App\Http\Controllers\PesertaPelatihanController;
 use App\Http\Controllers\VolumeLimasController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\StudentController;
+use App\Models\Role;
+use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
@@ -62,6 +68,10 @@ Route::post('store', [BelajarController::class, 'store'])->name('siswa.store');
 
 Route::get('/', [LoginController::class, 'index']);
 Route::post('action-login', [LoginController::class, 'actionLogin'])->name('action-login');
+
+Route::resource('user', UserController::class);
+Route::resource('role', RoleController::class);
+Route::resource('student', StudentController::class);
 Route::get('dashboard', [DashboardController::class, 'index']);
 
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
