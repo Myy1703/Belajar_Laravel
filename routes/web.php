@@ -68,13 +68,15 @@ Route::post('store', [BelajarController::class, 'store'])->name('siswa.store');
 
 Route::get('/', [LoginController::class, 'index']);
 Route::post('action-login', [LoginController::class, 'actionLogin'])->name('action-login');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
 Route::resource('student', StudentController::class);
+
+//
 Route::get('dashboard', [DashboardController::class, 'index']);
 
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 // CREATE READ UPDATE DELETE (CRUD)
 // post = untuk mengirim data (CREATE)
 // get = untuk melihat atau menampilkan data (READ)

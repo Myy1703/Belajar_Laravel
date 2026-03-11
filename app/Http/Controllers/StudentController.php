@@ -14,7 +14,7 @@ class StudentController extends Controller
     public function index()
     {
         $title = 'Data Student';
-        $students = Studdent::get(); //select * from users
+        $students = Student::get(); //select * from users
         return view('student.index', compact('title', 'students'));
     }
 
@@ -34,7 +34,7 @@ class StudentController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email|unique:students, email',
+            'email' => 'required|email|unique:students,email',
             'gender' => 'nullable',
             'phone' => 'nullable',
             'address' => 'nullable',
@@ -85,7 +85,7 @@ class StudentController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'email' => 'required|email|unique:students, email'. $id,
+            'email' => 'required|email|unique:students,email,' . $id,
             'gender' => 'nullable',
             'phone' => 'nullable',
             'address' => 'nullable',

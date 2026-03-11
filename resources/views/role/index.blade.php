@@ -13,8 +13,7 @@
                             <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th></th>
-                            <th>Email</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>

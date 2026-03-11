@@ -5,8 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
+
 {
-    protected $table = [
+   protected $table = 'students';
+
+   protected $fillable = [
         'name',
         'email',
         'phone',
