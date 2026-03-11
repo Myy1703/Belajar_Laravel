@@ -86,9 +86,24 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        const imgInput = document.getElementById('image-input');
+        const imgPreview = document.getElementById('img-preview');
+
+        imgInput.addEventListener('change', function(e){
+            const file = e.target.files[0];
+            // console.log(e.target.files[0]);
+            if(file){
+                const reader = new FileReader();
+                reader.onload = function(e){
+                    imgPreview.setAttribute('src', e.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        })
+
         $(document).on('click', '.delete-btn', function(e) {
             e.preventDefault(); //matiin action default
             var form = $(this).closest('form');

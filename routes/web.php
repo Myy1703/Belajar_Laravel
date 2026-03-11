@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\BelajarController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PerhitunganController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StudentController;
+use App\Models\Attendance;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Student;
@@ -73,6 +75,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::resource('user', UserController::class);
 Route::resource('role', RoleController::class);
 Route::resource('student', StudentController::class);
+Route::resource('attendance', AttendanceController::class);
 
 //
 Route::get('dashboard', [DashboardController::class, 'index']);
