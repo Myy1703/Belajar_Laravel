@@ -60,7 +60,7 @@ class RoleController extends Controller
     {
         $title = "Edit Role";
         $roles = Role::find($id); //select * from users where id='$id'
-        return view('role.edit', compact('title', 'role'));
+        return view('role.edit', compact('title', 'roles'));
     }
 
     /**

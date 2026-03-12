@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Attendance;
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class AttendanceController extends Controller
 {
@@ -13,6 +14,7 @@ class AttendanceController extends Controller
     public function index()
     {
         $attendances = Attendance::with('student')->latest()->get();
+        $title = 'Data Absensi';
         return view('attendance.index', compact('attendances','title'));
     }
 

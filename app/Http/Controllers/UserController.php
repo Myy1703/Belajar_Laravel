@@ -38,6 +38,7 @@ class UserController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
+            'role_id' => 'required|exists:roles,id',
         ]);
 
         //Insert into users () values()
@@ -79,6 +80,7 @@ class UserController extends Controller
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:8',
+            'role_id' => 'required|exists:roles,id',
         ]);
 
         $user = User::find($id);
@@ -105,3 +107,4 @@ class UserController extends Controller
         return redirect()->route('user.index');
     }
 }
+

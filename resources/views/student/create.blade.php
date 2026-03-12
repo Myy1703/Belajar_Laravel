@@ -45,7 +45,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Image</label>
                                 <input type="file" name="image" id="image-input" class="form-control" accept="image/*">
-                                <img id="img-preview" src="{{ asset('assets/img/detective.PNG') }}" alt="" width="100">
+                                <img id="img-preview" src="{{ asset('assets/img/detective.png') }}" alt="" width="100">
                             </div>
                         </div>
                         <div class="row mb-3">

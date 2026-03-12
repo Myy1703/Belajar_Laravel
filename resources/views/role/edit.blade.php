@@ -8,13 +8,13 @@
                         <div class="alert alert-danger">{{ $errors->first() }}</div>
                     @endif
                     <h5 class="card-title">{{ $title ?? '' }}</h5>
-                    <form action="{{ route('role.update', $role->id) }}" method="POST">
+                    <form action="{{ route('role.update', $roles->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
                             <label for="name" class="form-label">Name *</label>
                             <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter your name" required value="{{ $role->name }}">
+                                placeholder="Enter your name" required value="{{ $roles->name }}">
                         </div>
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                         <a href="{{ url()->previous() }}" class="btn btn-secondary">Back</a>
